@@ -16,5 +16,5 @@ runs:
     - run: ${{ github.action_path }}/install-riff.sh
       shell: bash
 branding:
-  icon: play
+  icon: music
   color: purple
