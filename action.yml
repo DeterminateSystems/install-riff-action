@@ -1,18 +1,16 @@
 name: Install Riff
 description: Install Riff in the GitHub Actions environment
 author: Determinate Systems
-inputs:
-  rust_toolchain:
-    description: The Rust toolchain to install
-    required: false
-    default: stable
 runs:
   using: composite
   steps:
+    # Install Nix
     - uses: cachix/install-nix-action@v17
+    # Install Cargo
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: stable
+    # Install Riff using ./install-riff.sh
     - run: ${{ github.action_path }}/install-riff.sh
       shell: bash
 branding:
