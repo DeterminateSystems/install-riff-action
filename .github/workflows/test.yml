@@ -21,7 +21,11 @@ jobs:
           toolchain: stable
       - name: Install Riff
         uses: ./
-      - run: riff help
+      - name: Test Riff in a Rust project
+        run: |
+          git clone https://github.com/serde-rs/serde
+          cd serde
+          riff run cargo build
   specific-version:
     strategy:
       matrix:
@@ -39,4 +43,8 @@ jobs:
         uses: ./
         with:
           riff_version: "1.0.0"
-      - run: riff help
+      - name: Test Riff in a Rust project
+        run: |
+          git clone https://github.com/serde-rs/serde
+          cd serde
+          riff run cargo build
