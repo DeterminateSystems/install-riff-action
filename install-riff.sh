@@ -14,6 +14,7 @@ echo "::group::Downloading from ${INSTALL_URL}"
 curl -Lo riff "${INSTALL_URL}"
 sudo mkdir -p /usr/local/bin
 sudo install -m +x ./riff /usr/local/bin/riff
+rm riff
 
 echo "::group::Riff ${RIFF_VERSION} installed"
 
