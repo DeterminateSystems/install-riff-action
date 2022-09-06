@@ -23,9 +23,9 @@ jobs:
         uses: ./
       - name: Test Riff in a Rust project
         run: |
-          git clone https://github.com/serde-rs/serde
-          cd serde
-          riff run cargo build
+          git clone https://github.com/DeterminateSystems/riff
+          cd riff
+          riff run cargo build -- --release
   specific-version:
     strategy:
       matrix:
@@ -45,6 +45,6 @@ jobs:
           riff_version: "1.0.0"
       - name: Test Riff in a Rust project
         run: |
-          git clone https://github.com/serde-rs/serde
-          cd serde
-          riff run cargo build
+          git clone https://github.com/DeterminateSystems/riff
+          cd riff
+          riff run cargo build -- --release
