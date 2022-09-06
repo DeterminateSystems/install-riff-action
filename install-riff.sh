@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "::group::Installing riff"
+ARCH="x86_64"
+VERSION="1.0.0"
+SYSTEM=$(uname | tr '[:upper:]' '[:lower:]')
 
-nix profile install "github:DeterminateSystems/riff"
+echo "::group::Installing riff ${VERSION} on ${SYSTEM}"
 
-VERSION=$(riff --version)
+INSTALL_URL="https://github.com/DeterminateSystems/riff/releases/download/v${VERSION}/riff-${ARCH}-${SYSTEM}"
 
-echo "::group::${VERSION} installed"
+echo "::group::Downloading from ${INSTALL_URL}"
+
+curl -Lo riff "${INSTALL_URL}"
+sudo mkdir -p /usr/local/bin
+sudo install -m +x ./riff /usr/local/bin/riff
+
+echo "::group::Riff ${VERSION} installed"
 
 exit 0
