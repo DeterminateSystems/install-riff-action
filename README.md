@@ -15,6 +15,17 @@ jobs:
         run: riff run cargo build -- --release
 ```
 
+You can supply a specific Riff version using the `riff_version` parameter:
+
+```yaml
+- name: Install Riff
+  uses: DeterminateSystems/install-riff-action@v1
+  with:
+    riff_version: "1.0.0"
+```
+
+The current default for `riff_version` is `1.0.0`.
+
 ## Pipeline
 
 `install-riff-action` runs two preparatory Actions:

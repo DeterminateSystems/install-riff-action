@@ -16,3 +16,15 @@ jobs:
       - name: Install Riff
         uses: ./
       - run: riff help
+  specific-version:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Riff
+        uses: ./
+        with:
+          riff_version: "1.0.0"
+      - run: riff help
