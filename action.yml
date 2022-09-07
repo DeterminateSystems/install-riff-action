@@ -2,7 +2,7 @@ name: Install Riff
 description: Install Riff in the GitHub Actions environment
 author: Determinate Systems
 inputs:
-  riff_version:
+  riff-version:
     description: The version of Riff to install
     required: false
     default: "1.0.0"
@@ -13,7 +13,7 @@ runs:
     - run: ${{ github.action_path }}/install-riff.sh
       shell: bash
       env:
-        RIFF_VERSION: ${{ inputs.riff_version }}
+        RIFF_VERSION: ${{ inputs.riff-version }}
 branding:
   icon: music
   color: purple

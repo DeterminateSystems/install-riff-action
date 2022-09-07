@@ -30,18 +30,24 @@ and [`actions-rs/toolchain`][toolchain] Actions work well for that (and are used
 in our [tests](./.github/workflows/test.yml)) but you can use other installation
 methods if you wish.
 
+## Available runners
+
+`install-riff-action` is available on `macos-*` and `ubuntu-*` systems. As [Nix]
+isn't supported on Windows, `install-riff-action` can't be used on `windows-*`
+runners.
+
 ## Configuration
 
-You can supply a specific Riff version using the `riff_version` parameter:
+You can supply a specific Riff version using the `riff-version` parameter:
 
 ```yaml
 - name: Install Riff
   uses: DeterminateSystems/install-riff-action@v1
   with:
-    riff_version: "1.0.0"
+    riff-version: "1.0.0"
 ```
 
-The current default for `riff_version` is `1.0.0`.
+The current default for `riff-version` is `1.0.0`.
 
 ## How it works
 
