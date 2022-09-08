@@ -29,7 +29,7 @@ jobs:
           git clone https://github.com/DeterminateSystems/riff
           cd riff
           riff run cargo build -- --release
-  test-specific-version:
+  test-specific-riff-version:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
@@ -47,6 +47,32 @@ jobs:
           toolchain: stable
       - name: Install Riff
         uses: ./
+        with:
+          riff-version: "1.0.0"
+      - name: Test Riff in a Rust project
+        run: |
+          git clone https://github.com/DeterminateSystems/riff
+          cd riff
+          riff run cargo build -- --release
+  # This test runs as if it were in a repo outside of this one
+  test-action-v1:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Nix
+        uses: cachix/install-nix-action@v17
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Install Riff
+        uses: DeterminateSystems/install-riff-action@v1
         with:
           riff-version: "1.0.0"
       - name: Test Riff in a Rust project
