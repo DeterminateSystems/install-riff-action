@@ -80,3 +80,4 @@ jobs:
           git clone https://github.com/DeterminateSystems/riff
           cd riff
           riff run cargo build -- --release
+
