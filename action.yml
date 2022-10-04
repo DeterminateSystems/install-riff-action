@@ -5,7 +5,7 @@ inputs:
   riff-version:
     description: The version of Riff to install
     required: false
-    default: "1.0.1"
+    default: "1.0.2"
 runs:
   using: composite
   steps:
