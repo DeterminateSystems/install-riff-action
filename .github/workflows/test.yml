@@ -28,7 +28,7 @@ jobs:
         run: |
           git clone https://github.com/DeterminateSystems/riff
           cd riff
-          riff run cargo build -- --release
+          riff run cargo check
   test-specific-riff-version:
     strategy:
       matrix:
@@ -53,7 +53,7 @@ jobs:
         run: |
           git clone https://github.com/DeterminateSystems/riff
           cd riff
-          riff run cargo build -- --release
+          riff run cargo check
   # This test runs as if it were in a repo outside of this one
   test-action-v1:
     strategy:
@@ -79,5 +79,5 @@ jobs:
         run: |
           git clone https://github.com/DeterminateSystems/riff
           cd riff
-          riff run cargo build -- --release
+          riff run cargo check
 
