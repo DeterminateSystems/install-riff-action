@@ -48,7 +48,7 @@ jobs:
       - name: Install Riff
         uses: ./
         with:
-          riff-version: "1.0.0"
+          riff-version: "1.0.2"
       - name: Test Riff in a Rust project
         run: |
           git clone https://github.com/DeterminateSystems/riff
@@ -74,7 +74,7 @@ jobs:
       - name: Install Riff
         uses: DeterminateSystems/install-riff-action@v1
         with:
-          riff-version: "1.0.0"
+          riff-version: "1.0.2"
       - name: Test Riff in a Rust project
         run: |
           git clone https://github.com/DeterminateSystems/riff

@@ -44,10 +44,10 @@ You can supply a specific Riff version using the `riff-version` parameter:
 - name: Install Riff
   uses: DeterminateSystems/install-riff-action@v1
   with:
-    riff-version: "1.0.0"
+    riff-version: "1.0.2"
 ```
 
-The current default for `riff-version` is `1.0.0`.
+The current default for `riff-version` is `1.0.2`.
 
 ## How it works
 
@@ -62,3 +62,4 @@ install Riff itself.
 [rust]: https://rust-lang.org
 [toolchain]: https://github.com/actions-rs/toolchain
 [install-nix]: https://github.com/cachix/install-nix-action
+
