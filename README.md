@@ -55,7 +55,26 @@ With a Rust toolchain (including [Cargo]) and Nix installed in your pipeline,
 `install-nix-action` runs the [`install-riff.sh`](./install-riff.sh) script to
 install Riff itself.
 
+## Release process
+
+Releases for this Action are tied to [Riff] releases. For each new Riff version:
+
+* Update `inputs.riff-version.default` in [`action.yml`](./action.yml).
+* Update `riff-version` in the [README](./README.md) and in the [CI
+  pipeline][ci].
+* Pull request the changes and merge.
+* Tag the new `HEAD` with the new version (e.g. `v1.2.3`) and push.
+* [Create a new release][create] with the following attributes:
+  * Select the new version tag.
+  * Provide a release title of the form `install-riff-action-v*`, e.g.
+    `install-riff-action-v1.2.3`.
+  * Choose **Dependency Management** as the primary category.
+  * Add a brief release note, e.g. `Release for Riff version v1.2.3`.
+  * Submit the release.
+
 [cargo]: https://doc.rust-lang.org/cargo
+[ci]: ./.github/workflows/test.yml
+[create]: https://github.com/DeterminateSystems/install-riff-action/releases/new
 [flakes]: https://nixos.wiki/wiki/Flakes
 [nix]: https://nixos.org
 [riff]: https://github.com/DeterminateSystems/riff
