@@ -44,10 +44,10 @@ You can supply a specific Riff version using the `riff-version` parameter:
 - name: Install Riff
   uses: DeterminateSystems/install-riff-action@v1
   with:
-    riff-version: "1.0.2"
+    riff-version: "1.0.3"
 ```
 
-The current default for `riff-version` is `1.0.2`.
+The current default for `riff-version` is `1.0.3`.
 
 ## How it works
 
