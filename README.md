@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Nix
-        uses: cachix/install-nix-action@v17
+        uses: DeterminateSystems/nix-installer-action@main
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -25,7 +25,7 @@ jobs:
 ```
 
 As in the example above, you need to have both [Nix] and [Cargo] installed in
-your pipeline for Riff to work. The [`cachix/install-nix-action`][install-nix]
+your pipeline for Riff to work. The [`DeterminateSystems/nix-installer-action`][install-nix]
 and [`actions-rs/toolchain`][toolchain] Actions work well for that (and are used
 in our [tests](./.github/workflows/test.yml)) but you can use other installation
 methods if you wish.
@@ -52,7 +52,7 @@ The current default for `riff-version` is `1.0.3`.
 ## How it works
 
 With a Rust toolchain (including [Cargo]) and Nix installed in your pipeline,
-`install-nix-action` runs the [`install-riff.sh`](./install-riff.sh) script to
+`install-riff-action` runs the [`install-riff.sh`](./install-riff.sh) script to
 install Riff itself.
 
 ## Release process
@@ -80,5 +80,5 @@ Releases for this Action are tied to [Riff] releases. For each new Riff version:
 [riff]: https://github.com/DeterminateSystems/riff
 [rust]: https://rust-lang.org
 [toolchain]: https://github.com/actions-rs/toolchain
-[install-nix]: https://github.com/cachix/install-nix-action
+[install-nix]: https://github.com/DeterminateSystems/nix-installer-action
 
